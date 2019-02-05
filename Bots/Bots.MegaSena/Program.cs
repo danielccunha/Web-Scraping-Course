@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 
-namespace Bots.MegaSena
+namespace Bots.MegaSena.Html
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("What's the contest number: ");
+            Console.Write("What's the number: ");
             string numeroConcurso = Console.ReadLine();
 
             if (string.IsNullOrWhiteSpace(numeroConcurso) || !int.TryParse(numeroConcurso, out int numero))            
                 Console.WriteLine("Invalid number. It must be an integer.");
             else            
-                LogResult(numeroConcurso);            
+                LogResult(numeroConcurso);
 
             Console.ReadKey(intercept: true);
         }
