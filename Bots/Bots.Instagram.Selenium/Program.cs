@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using prmToolkit.Configuration;
 using prmToolkit.Selenium;
 using prmToolkit.Selenium.Enum;
 using System;
@@ -9,7 +8,7 @@ namespace Bots.Instagram.Selenium
 {
     class Program
     {
-        private static string DriverPath => @"E:\Projetos\Web-Scraping-Course\Drivers";
+        private static string DriverPath => @"C:\Codes\Web-Scraping-Course\Drivers";
         private static string Username { get; set; }
         private static string Password { get; set; }
 
@@ -31,6 +30,11 @@ namespace Bots.Instagram.Selenium
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                webDriver.Close();
+                webDriver.Dispose();
             }
 
             Console.ReadKey(intercept: true);
